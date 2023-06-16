@@ -59,11 +59,17 @@ public class Jugador extends Persona {
 
     // Método jugando
     public String jugando() {
+        incrementarPartidosJugados();
         String mensajeJugando = (this.estaJugando) ? "está jugando." : "no está jugando.";
         String genero = (super.dameSexo()) ? "Es un chico" : "Es una chica";
         String jugadorOjugadora = (super.dameSexo()) ? "Jugador" : "Jugadora";
 
-        return "El "+ jugadorOjugadora + getNombre() + mensajeJugando + "\n";
+        return "El "+ jugadorOjugadora + " " + getNombre() + " " + mensajeJugando + "\n";
+    }
+    
+    //Incrementa en 1 los partidos jugados
+    public void incrementarPartidosJugados() {
+        this.partidosJugados++;
     }
 
     // Método toString
